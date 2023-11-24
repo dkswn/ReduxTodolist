@@ -1,5 +1,6 @@
+// 서브페이지 
 const Detail = () => {
-  return <div></div>;
+  return <div>Detail</div>;
 };
 
 export default Detail;

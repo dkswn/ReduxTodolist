@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <App />
-  </Provider>
+  </Provider> //  프로바이더는 프로파이더 안에 칠드런에 영향력을 끼친다 
 );
 
 reportWebVitals();
