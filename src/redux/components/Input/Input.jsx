@@ -20,8 +20,12 @@ function Input() {
 
   const mutation = useMutation(addTodo, {
     onSuccess: (data) => {
+      // data에 입력이 된다면
       console.log("data", data);
-      queryClient.invalidateQueries("todos");
+      queryClient.invalidateQueries("todos"); // 성공하면 실행하는 코드
+    },
+    onError: (error) => {
+      console.log("error", error);
     },
   });
 

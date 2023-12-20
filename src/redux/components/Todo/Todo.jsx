@@ -31,7 +31,7 @@ function Todo({ todo, isActive }) {
 
   const switchMutation = useMutation(switchTodo, {
     onSuccess: () => {
-      queryClient.invalidateQueries("todos");
+      queryClient.invalidateQueries("todos"); // 기존의 가지고 온 데이터를 무효화 시켜 메소드
     },
   });
 

@@ -11,7 +11,10 @@ import { useQuery } from "react-query";
  * @returns TodoList 컴포넌트
  */
 function TodoList({ isActive }) {
-  const { isLoading, isError, data } = useQuery("todos", getTodos);
+  const { isLoading, isError, data, isFetching } = useQuery("todos", getTodos, {
+    staleTime: 3000, // 3초 후에 fresh에서 stale 로 변경
+    retry: 7, // json-server 연결이 끊켰을때 7번까지 시도 후 에러
+  });
 
   if (isLoading) {
     return <p>로딩중입니다....!</p>;
